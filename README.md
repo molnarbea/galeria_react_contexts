@@ -63,36 +63,6 @@ Ha mindkettő saját állapotot tárolna, könnyen eltérés keletkezne.
 Ezért az állapot központi helyre kerül.
 Így minden komponens ugyanazt az aktuális képet látja.
 
-Az Általános Komponensfa Hierarchia
-App (elindítja az alkalmazást)
-│
-├── KepProvider (biztosítja a közös adatokat)
-│
-└── Galeria (összefogja a galériát)
-    │
-    ├── NagyKep(megjeleníti a kiválasztott képet)
-    │
-    └── KisKep (megjeleníti az összes bélyegképet)
-        ├── KisKep
-        ├── KisKep
-        ├── KisKep
-        └── ...
-        
-Általános Projekt Mappaszerkezet
-src
-│
-├── components
-│   ├── Galeria.tsx
-│   ├── KisKep.tsx
-│   └── NagyKep.tsx
-│
-├── contexts
-│   └── KepContext.tsx
-│
-├── adat.tsx
-├── App.tsx
-└── main.tsx
-
 Prop Drilling vs. Context API Értékelése
 A két megoldás ugyanarra szolgál:
 •	adatok megosztására a komponensek között.

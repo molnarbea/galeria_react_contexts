@@ -1,12 +1,13 @@
 import type { KepTipus } from "../adat";
+import { useKepContext } from "../contexts/KepContext";
 import './NagyKep.css'
 
 interface NagyKepProps{
-    kepem: KepTipus
-    leptet: (irany: boolean) => void
+     kepem: KepTipus
 }
 
-export default function NagyKep({kepem, leptet}:NagyKepProps){
+export default function NagyKep({kepem}:NagyKepProps){
+    const { leptet } = useKepContext();
 
     if (!kepem) {
         return <div className="nagykepdiv">Nincs megjeleníthető kép</div>

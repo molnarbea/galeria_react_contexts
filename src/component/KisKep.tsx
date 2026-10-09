@@ -1,18 +1,20 @@
 import type { KepTipus } from "../adat";
+import { useKepContext } from "../contexts/KepContext";
 
 interface KisKepProps{
     kepem: KepTipus,
     index: number,
-    kivalaszt: (index:number) => void,
-    isAktiv:boolean
+    isAktiv: boolean
 }
 
-export default function KisKep({kepem, index, kivalaszt, isAktiv}:KisKepProps){
+export default function KisKep({kepem, index, isAktiv}:KisKepProps){
+     const { kivalaszt } = useKepContext();
+
 
     return(
-        <div className={`kepdiv ${isAktiv ? 'aktiv' : ''}`}  onClick={() => kivalaszt(index)}>
+        <div className={`kepdiv ${isAktiv ? 'aktiv' : ''}`} onClick={() => kivalaszt(index)}>
             <div className="kep">
-                <img src={kepem.kep} alt={kepem.felirat || 'Kép'}/>
+                <img src={kepem.kep} alt={kepem.felirat || 'Kép'} />
             </div>
 
         </div>
